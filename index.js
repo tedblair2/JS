@@ -39,6 +39,9 @@ const createPaginationButtons=()=>{
             page=i
             paginate()
         }
+        if (i === 1) {
+        button.classList.add("active");
+    }
     }
 }
 prev.onclick=()=>{
