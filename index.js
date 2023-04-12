@@ -1,13 +1,13 @@
 const galleryItems=document.querySelectorAll(".item")
 const prev=document.querySelector(".prev");
-const next=document.querySelector(".next"),
-pageNumber=document.querySelector(".container .actions .page span")
+const next=document.querySelector(".next")
+const paginationDiv=document.querySelector(".container .actions .page")
+
 const maxItems=8
 let page=1
 let noOfPages=Math.ceil(galleryItems.length/maxItems)
 
 const paginate=()=>{
-    pageNumber.innerHTML=page
     const start=(page - 1)*maxItems
     const end=start + maxItems
     galleryItems.forEach(item=>{
@@ -24,6 +24,23 @@ const paginate=()=>{
         }
     })
 }
+const createPaginationButtons=()=>{
+   for(let i=1;i<=noOfPages;i++){
+        const button=document.createElement("button")
+        button.classList.add("number")
+        button.textContent=i;
+        paginationDiv.appendChild(button)
+        button.onclick=()=>{
+            const buttons=document.querySelectorAll(".number")
+            buttons.forEach(item=>{
+                item.classList.remove("active")
+            })
+            button.classList.add("active")
+            page=i
+            paginate()
+        }
+    }
+}
 prev.onclick=()=>{
     if(page>1){
         page--
@@ -37,5 +54,8 @@ next.onclick=()=>{
     }
 
 }
-window.onload=paginate
+window.onload=()=>{
+    paginate()
+    createPaginationButtons()
+}
 
