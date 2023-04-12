@@ -23,6 +23,12 @@ const paginate=()=>{
             item.classList.add("show");
         }
     })
+    const buttons=document.querySelectorAll(".number")
+    buttons.forEach(item=>{
+        item.classList.remove("active")
+    })
+    const currentButton = document.querySelector(`.number:nth-child(${page})`);
+    currentButton.classList.add("active");
 }
 const createPaginationButtons=()=>{
    for(let i=1;i<=noOfPages;i++){
@@ -39,9 +45,6 @@ const createPaginationButtons=()=>{
             page=i
             paginate()
         }
-        if (i === 1) {
-        button.classList.add("active");
-    }
     }
 }
 prev.onclick=()=>{
@@ -58,7 +61,7 @@ next.onclick=()=>{
 
 }
 window.onload=()=>{
-    paginate()
     createPaginationButtons()
+    paginate()
 }
 
