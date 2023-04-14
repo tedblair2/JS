@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <div class="header">
+            <h2>Upload Images</h2>
+            <div class="message"></div>
+        </div>
+        <div class="input-div">
+            <p>Drag & drop image or <span class="browse">Browse</span></p>
+            <input type="file" name="file" id="" accept="image/jpeg ,image/jpg, image/png" multiple="multiple" class="file" hidden>
+        </div>
+        <form class="saved-form">
+            <div class="header">
+                <h3>Saved in Server</h3>
+                <button type="submit">Delete</button>
+            </div>
+            <div class="saved-div"></div>
+        </form>
+        <form class="queued-form">
+            <div class="header">
+                <h3>In FrontEnd</h3>
+                <button type="submit">Upload</button>
+            </div>
+            <div class="queued-div">
+            </div>
+        </form>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
