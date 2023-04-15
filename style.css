@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+}
+.container{
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    background: white;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border-radius: 6px;
+}
+.container .top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.top input{
+    width: 80%;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 8px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid lightgray;
+}
+.top button{
+    width: 15%;
+    color: white;
+    background: rgb(125, 188, 209);
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.tasks{
+    width: 100%;
+}
+.task{
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    height: 55px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.task button{
+    width: 10%;
+    height: 90%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: lightblue;
+    outline: none;
+}
+.task button i{
+    font-size: 16px;
+}
+.task.completed{
+    text-decoration: line-through;
+}
