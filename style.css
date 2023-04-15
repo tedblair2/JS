@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: lightblue;
+}
+.container{
+    background: white;
+    width: 30%;
+    border-radius: 7px;
+    padding: 20px;
+}
+.input{
+    width: 100%;
+    height: 80px;
+    outline: none;
+    border: none;
+    background: white;
+    margin-bottom: 15px;
+}
+.input input{
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: end;
+    padding-right: 5px;
+    background: transparent;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+button{
+    background: lightblue;
+    color: white;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+button:hover{
+    color: lightblue;
+    background: white;
+}
+.top .one,.top .two,.top .three,.bottom,.left .four,.left .five{
+    display: flex;
+    align-items: center;
+}
+.bottom .left{
+    flex-basis: 75%;
+}
+.one button,.two button,.three button {
+    flex-basis: 25%;
+    height: 50px;
+}
+.four button{
+    flex-basis: 33.3%;
+    height: 50px;
+}
+.five button{
+    flex-basis: 50%;
+    height: 50px;
+}
+.bottom .right{
+    flex-basis: 25%;
+    height: 100%;
+}
+.right button{
+    width: 100%;
+    height: 100px;
+    color: white;
+    background: rgb(65, 43, 189);
+}
