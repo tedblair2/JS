@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="music">
+            <button class="close"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button>
+            <div class="music-details">
+                <img src="p3.png" alt="">
+                <h3>Music title</h3>
+                <span>Music artist</span>
+            </div>
+            <div class="controls">
+                <button class="shuffle"><i class="fa fa-random" aria-hidden="true"></i></button>
+                <button class="prev"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                <button class="play hide"><i class="fa fa-play-circle" aria-hidden="true"></i></button>
+                <button class="pause"><i class="fa fa-pause-circle" aria-hidden="true"></i></button>
+                <button class="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+                <button class="repeat"><i class="fa fa-repeat" aria-hidden="true"></i></button>
+            </div>
+            <audio preload="metadata" class="audio"></audio>
+            <div class="progress-bar">
+                <div class="current-progress"></div>
+            </div>
+            <div class="time">
+                <span class="current">0:00</span>
+                <span class="total-time">3:20</span>
+            </div>
+        </div>
+        <div class="list hide">
+            <button>X</button>
+            <div class="music-list">
+                
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
