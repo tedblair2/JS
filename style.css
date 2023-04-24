@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    background-color: lightblue;
+}
+body , .video-controls, .video-timer, .options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    max-width: 900px;
+    width: 90%;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 7px;
+    position: relative;
+}
+.container.fullscreen{
+    max-width: 100%;
+    width: 100%;
+}
+.wrapper{
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+.container.show-controls .wrapper{
+    opacity: 1;
+    pointer-events: auto;
+    bottom: 0;
+    transition: all 0.2s ease;
+}
+.wrapper::before{
+    content: '';
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+    height: calc(100% + 35px);
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+.video-timeline{
+    height: 7px;
+    width: 100%;
+    cursor: pointer;
+}
+.video-timeline .progress-area{
+    height: 3px;
+    position: relative;
+    background-color: lightgray;
+}
+.progress-area span{
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    color: white;
+    font-size: 13px;
+    transform: translateX(-50%);
+}
+.progress-area .progress-bar{
+    width: 0%;
+    height: 100%;
+    position: relative;
+    background-color: rgb(16, 137, 207);
+}
+.progress-area .progress-bar::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: 13px;
+    width: 13px;
+    background-color: inherit;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+.progress-area span, .progress-area .progress-bar::before{
+    display: none;
+}
+.video-timeline:hover .progress-area span,
+.video-timeline:hover .progress-area .progress-bar::before{
+    display: block;
+}
+.video-controls{
+    padding: 5px 20px 10px;
+}
+.video-controls .options{
+    width: 100%;
+}
+.video-controls .options:first-child{
+    justify-content: flex-start;
+}
+.video-controls .options:last-child{
+    justify-content: flex-end;
+}
+.options button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+}
+.options button :where(i, span){
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+}
+.options input{
+    height: 4px;
+    max-width: 75px;
+}
+.options .video-timer{
+    font-size: 13px;
+    color: white;
+    margin-left: 15px;
+}
+.playback-option{
+    position: relative;
+}
+.playback-option .speed-options{
+    position: absolute;
+    bottom: 40px;
+    left: -40px;
+    width: 90px;
+    opacity: 0;
+    pointer-events: none;
+    background-color: white;
+    border-radius: 5px;
+    list-style: none;
+    transition: opacity 0.3s ease;
+}
+.playback-option, .speed-options.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.speed-options li{
+    font-size: 14px;
+    padding: 5px 0 5px 15px;
+    cursor: pointer;
+}
+.speed-options li.active{
+    background-color: rgb(16, 137, 207);
+    color: white;
+}
+.video-timer .separator{
+    font-size: 15px;
+    margin: 0 5px;
+}
+.container video{
+    width: 100%;
+}
